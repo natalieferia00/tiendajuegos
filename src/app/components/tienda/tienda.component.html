@@ -1,0 +1,26 @@
+<div class="store-front">
+  <header class="store-header">
+    <h1 class="neon-title-fix">GAMING</h1>
+    <div class="subtitle-wrapper">
+      <div class="cyber-line"></div>
+      <p class="cyber-subtitle">PREMIUM PHYSICAL GAMES COLLECTIVE</p>
+      <div class="cyber-line"></div>
+    </div>
+  </header>
+
+  <div class="games-grid">
+    @for (juego of juegos; track juego.id) {
+      <div class="game-card">
+        <div class="image-container">
+          <img [src]="juego.imagen" [alt]="juego.nombre" class="game-cover">
+          <div class="badge">{{juego.formato}}</div>
+        </div>
+        <div class="card-content">
+          <h3 class="game-title">{{juego.nombre}}</h3>
+          <p class="status">ESTADO: {{juego.estado}}</p>
+          <div class="price-box">₲ {{juego.precio}}</div>
+          <button (click)="adquirir(juego)" class="buy-button">AÑADIR AL CARRITO</button>
+        </div>
+      </div>
+    } </div>
+</div>
